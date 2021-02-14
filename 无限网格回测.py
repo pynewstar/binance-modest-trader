@@ -52,8 +52,8 @@ class BackTest:
                 if price[i]*coins < base_value: # 低于基准，买
                     if money>=round(base_value-price[i]*coins,dd_price)>=10:
                         break_idx_buy.append(i)
-                        coins+=round(round(base_value-price[i]*coins,dd_price)/price[i]/(1+0.001),dd_qty)
                         money-=round(base_value-price[i]*coins,dd_price)
+                        coins+=round(round(base_value-price[i]*coins,dd_price)/price[i]/(1+0.001),dd_qty)
                 elif price[i]*coins > base_value:   # 高于基准，卖
                     if coins>0:
                         if round(price[i]*coins-base_value,dd_price)>=10:
